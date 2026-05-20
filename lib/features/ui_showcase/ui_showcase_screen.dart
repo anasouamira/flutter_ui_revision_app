@@ -79,7 +79,7 @@ class _UiShowcaseScreenState extends State<UiShowcaseScreen> {
             // ════════════════════════════════
             _SectionHeader('Text'),
             const Text('Default text'),
-            const SizedBox(height: 4),
+            const SizedBox(height: 20),
             const Text('Bold text', style: TextStyle(fontWeight: FontWeight.bold)),
             const Text('Large text', style: TextStyle(fontSize: 22)),
             const Text('Colored text', style: TextStyle(color: Colors.blue)),
@@ -261,19 +261,20 @@ class _UiShowcaseScreenState extends State<UiShowcaseScreen> {
             // RADIO
             // ════════════════════════════════
             _SectionHeader('Radio Buttons'),
-            Column(
-              children: [1, 2, 3].map((val) {
-                return Row(
-                  children: [
-                    Radio<int>(
-                      value: val,
-                      groupValue: _radioValue,
-                      onChanged: (v) => setState(() => _radioValue = v!),
-                    ),
-                    Text('Option $val'),
-                  ],
-                );
-              }).toList(),
+            // New API: RadioGroup manages the selected value
+            RadioGroup<int>(
+              groupValue: _radioValue,
+              onChanged: (val) => setState(() => _radioValue = val!),
+              child: Column(
+                children: [1, 2, 3].map((val) {
+                  return Row(
+                    children: [
+                      Radio<int>(value: val),
+                      Text('Option $val'),
+                    ],
+                  );
+                }).toList(),
+              ),
             ),
 
             // ════════════════════════════════
