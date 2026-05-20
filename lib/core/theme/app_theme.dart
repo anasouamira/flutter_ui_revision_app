@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
-// Simple light theme — no fancy colors, just clean Material 3 defaults
+// Simple light theme — clean Material 3 defaults
 class AppTheme {
   static ThemeData get lightTheme {
     return ThemeData(
       useMaterial3: true,
       colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
-      // Simple card shape
-      cardTheme: const CardTheme(
+
+      // CardThemeData is the correct type for ThemeData.cardTheme
+      cardTheme: CardThemeData(
         elevation: 2,
-        margin: EdgeInsets.symmetric(vertical: 6, horizontal: 0),
+        margin: const EdgeInsets.symmetric(vertical: 6),
       ),
+
       // Clean AppBar style
       appBarTheme: const AppBarTheme(
         backgroundColor: Colors.indigo,
@@ -18,7 +20,8 @@ class AppTheme {
         elevation: 2,
         centerTitle: false,
       ),
-      // Input field underline style (Material default)
+
+      // Outlined input fields across all screens
       inputDecorationTheme: const InputDecorationTheme(
         border: OutlineInputBorder(),
         contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 14),
