@@ -22,7 +22,15 @@ class _UiShowcaseScreenState extends State<UiShowcaseScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       // ── AppBar ──
-      appBar: AppBar(title: const Text('UI Showcase')),
+      appBar: AppBar(
+        title: const Text('UI Showcase'),
+        // Back button — Navigator.pop returns to the previous screen
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.pop(context),
+          tooltip: 'Back',
+        ),
+      ),
 
       // ── Drawer ──
       drawer: Drawer(

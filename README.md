@@ -6,11 +6,27 @@ A new Flutter project.
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+lib/
+├── main.dart
+├── core/
+│   ├── theme/
+│   │   └── app_theme.dart
+│   └── widgets/
+│       ├── custom_button.dart
+│       └── custom_text_field.dart
+├── features/
+│   ├── home/
+│   │   └── home_screen.dart
+│   ├── ui_showcase/
+│   │   └── ui_showcase_screen.dart
+│   ├── bmi/
+│   │   └── bmi_screen.dart
+│   ├── discount/
+│   │   └── discount_screen.dart
+│   └── todo/
+│       └── todo_screen.dart
+└── routes/
+└── app_routes.dart
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
